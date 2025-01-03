@@ -1,0 +1,677 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: url('https://www.example.com/animated-background.gif') center/cover no-repeat fixed;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #4f435f;
+    --secondary-color: #03dac6;
+    --card-bg: #f8f9fa;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac6;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+}
+
+header {
+    background: rgb(53, 42, 71);
+    color: #e8e5e5;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+section {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* General About Section Styling */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--text-color); /* Use the variable for dynamic color change */
+}
+
+/* Dark Mode: Set text color to white for #about */
+.dark-mode #about {
+    color: #ffffff;
+}
+
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsive layout for larger screens */
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .profile-photo {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+}
+
+/* Profile Photo Styling */
+.profile-photo {
+    width: 200px; /* Increased size */
+    height: 200px; /* Increased size */
+    border-radius: 50%;
+    box-shadow: 0 4px 6px var(--card-shadow);
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+}
+
+
+.about-container p {
+    margin-top: 15px;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.project {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--card-shadow);
+    padding: 1.5rem;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px var(--card-shadow);
+}
+
+.project h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #a85353;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+form button {
+    background: var(--primary-color);
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 20px;
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px var(--card-shadow);
+    transition: background-color 0.3s;
+}
+
+#dark-mode-toggle:hover {
+    background: var(--secondary-color);
+}
+
+/* Social Media Links Styling */
+.about-container {
+    position: relative; /* Ensures the container can hold absolutely positioned elements */
+}
+
+.social-media-links {
+    position: absolute;
+    top: 50%; /* Centers the links vertically in the container */
+    right: 10px; /* Places the links on the right side */
+    transform: translateY(-50%); /* Adjusts to make the positioning exactly centered */
+    display: flex;
+    flex-direction: column; /* Stack the icons vertically */
+    gap: 15px; /* Space between social media icons */
+    align-items: flex-start;
+}
+
+.social-media-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-media-links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px var(--card-shadow); /* Adds shadow on hover */
+}
+
+.social-media-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the logos circular */
+}
+
+.project {
+    background-color: #292929;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    color: #fefefe;
+}
+
+.project p {
+    color: #e0e0e0;
+}
+
+.project a {
+    color: #bb86fc;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #6d578e; /* Light purple border */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Optional shadow for extra effect */
+}
+
+#startup {
+    padding: 2rem;
+    background-color: #ffffff; /* Dark background for consistency */
+    color: #181515; /* Light text */
+    text-align: center;
+}
+
+#startup h2 {
+    color: #bb86fc; /* Accent color for the section heading */
+    margin-bottom: 1rem;
+}
+
+#startup p {
+    color: #0f0d0d;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.services-container::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #ffffff; /* Default light mode background */
+    color: #000000; /* Default light mode text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+body.dark-mode {
+    background-color: #181818; /* Dark mode background */
+    color: #ffffff; /* Dark mode text */
+}
+
+header, section, footer {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header.dark-mode, section.dark-mode, footer.dark-mode {
+    background-color: #292929; /* Darker background for sections */
+    color: #e0e0e0; /* Light text for sections */
+}
+
+/* Button styles */
+.toggle-button {
+    background-color: #181818;
+    color: #ffffff;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-button:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+#startup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #ffffff; /* Dark background */
+    color: #e0e0e0; /* Light text */
+}
+
+.startup-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Space between text and image */
+}
+
+.startup-text {
+    flex: 1;
+    max-width: 50%; /* Limit text width */
+    text-align: left;
+}
+
+.startup-text h2 {
+    color: #bb86fc; /* Highlighted color for heading */
+    margin-bottom: 1rem;
+}
+
+.startup-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.startup-logo {
+    flex: 1;
+    text-align: center;
+}
+
+.startup-logo img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 50%; /* Ensure the image remains circular */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add a shadow for style */
+}
+
+/* Default Dark Mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Other sections like Startup and Services */
+body.dark-mode #startup,
+body.dark-mode #services {
+    background-color: #181818;
+    color: #000000;
+}
+
+.social-media-box {
+    text-align: center; /* Center the entire box */
+    padding: 1rem 0;
+}
+
+.social-media-links a {
+    display: inline-block; /* Makes the anchor behave like a block */
+    margin: 0 10px;
+    border-radius: 50%; /* Makes the border circular for round logos */
+    overflow: hidden; /* Ensures the logo fits within the circular border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #dd1623; /* Adds a white border */
+}
+
+.social-media-links a img {
+    display: block; /* Removes inline spacing around the image */
+    width: 41px; /* Sets the size of the logo */
+    height: 41px;
+    object-fit: cover; /* Ensures proper aspect ratio */
+    transition: transform 0.3s ease; /* Adds a subtle zoom effect */
+}
+
+.social-media-links a:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5); /* Glowing effect */
+}
+
+.social-media-links a img:hover {
+    transform: scale(1.1); /* Zooms in on the logo */
+}
+
+/* Global Dark Mode Styles */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header, footer, #about, #projects, #resume, #services, #contact {
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+/* Links in dark mode */
+a {
+    color: #bb86fc;
+}
+
+a:hover {
+    color: #e0e0e0;
+}
+
+/* Startup Section Light Mode */
+#startup {
+    background-color: #ffffff;
+    color: #ffffff; /* White text in the Startup section by default */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Specific text and link color adjustments for the Startup section */
+#startup h2, #startup p {
+    color: #ffffff; /* Ensures text is white */
+}
+
+#startup a {
+    color: #007bff;
+}
+
+#startup a:hover {
+    color: #0056b3;
+}
+/* Global Dark Mode Styles */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header, footer, #about, #projects, #resume, #services {
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+/* Links in dark mode */
+a {
+    color: #bb86fc;
+}
+
+a:hover {
+    color: #e0e0e0;
+}
+
+/* Contact Me Section - Dark Mode */
+#contact {
+    background-color: #181818; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Startup Section - Dark Mode */
+#startup {
+    background-color: #181818; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Specific text and link color adjustments for the Startup section */
+#startup h2, #startup p {
+    color: #e0e0e0; /* Light text */
+}
+
+#startup a {
+    color: #bb86fc;
+}
+
+#startup a:hover {
+    color: #ffffff;
+}
+
+/* Contact Section form text styles */
+#contact input, #contact textarea {
+    background-color: #f4f3f3; /* Dark input background */
+    color: #000000; /* Light text */
+    border: 1px solid #444;
+}
+
+#contact button {
+    background-color: #bb86fc;
+    color: #000000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #9b4dff;
+}
+
+/* Set label text color to black in Contact Me section */
+#contact label {
+    color: #000000; /* Black color for the labels */
+}
+
+/* Contact form input and textarea styles remain the same */
+#contact input, #contact textarea {
+    background-color: #ffffff; /* Dark input background */
+    color: #000000; /* Black text */
+    border: 1px solid #444;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: #b0b0b0; /* Lighter placeholder text */
+}
+
+#contact button {
+    background-color: #bb86fc;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #9b4dff;
+}
+
+/* Global Dark Mode Styles */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header, footer, #about, #projects, #resume, #services, #contact, #startup {
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+/* Heading color for About Me, Projects, Resume, Contact Me, and Startup */
+#about h2, 
+#projects h2, 
+#resume h2, 
+#contact h2, 
+#startup h2 {
+    color: #87358d; /* Blue color */
+}
+
+/* Links in dark mode */
+a {
+    color: #bb86fc;
+}
+
+a:hover {
+    color: #e0e0e0;
+}
+
+/* Button styles */
+button {
+    background-color: #bb86fc;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9b4dff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
